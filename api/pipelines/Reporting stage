@@ -6,16 +6,16 @@
       "tags": [],
       "pipelines": [
         "Feature engineering",
-        "Data ingestion",
-        "Reporting stage",
         "Pre-modelling",
-        "__default__"
+        "__default__",
+        "Reporting stage",
+        "Data ingestion"
       ],
       "type": "data",
       "modular_pipelines": [
-        "feature_engineering",
+        "ingestion",
         "reporting",
-        "ingestion"
+        "feature_engineering"
       ],
       "layer": "primary",
       "dataset_type": "pandas.parquet_dataset.ParquetDataset",
@@ -30,15 +30,15 @@
       "name": "feature_importance_output",
       "tags": [],
       "pipelines": [
-        "Pre-modelling",
-        "Feature engineering",
         "__default__",
-        "Reporting stage"
+        "Pre-modelling",
+        "Reporting stage",
+        "Feature engineering"
       ],
       "type": "data",
       "modular_pipelines": [
-        "feature_engineering",
-        "reporting"
+        "reporting",
+        "feature_engineering"
       ],
       "layer": "feature",
       "dataset_type": "pandas.csv_dataset.CSVDataset",
@@ -248,16 +248,8 @@
   ],
   "edges": [
     {
-      "source": "reporting",
+      "source": "c7646ea1",
       "target": "d0e9b00f"
-    },
-    {
-      "source": "reporting",
-      "target": "eb7d6d28"
-    },
-    {
-      "source": "1e3cc50a",
-      "target": "4adb5c8b"
     },
     {
       "source": "9f266f06",
@@ -268,56 +260,16 @@
       "target": "40886786"
     },
     {
-      "source": "44ef9b48",
+      "source": "reporting",
       "target": "c0be8342"
     },
     {
-      "source": "c7646ea1",
-      "target": "d0e9b00f"
-    },
-    {
-      "source": "9f266f06",
-      "target": "44ef9b48"
-    },
-    {
-      "source": "9f266f06",
-      "target": "be6b7919"
+      "source": "1e3cc50a",
+      "target": "4adb5c8b"
     },
     {
       "source": "9f266f06",
       "target": "c7646ea1"
-    },
-    {
-      "source": "reporting",
-      "target": "3b199c6b"
-    },
-    {
-      "source": "reporting",
-      "target": "c0be8342"
-    },
-    {
-      "source": "4adb5c8b",
-      "target": "eb7d6d28"
-    },
-    {
-      "source": "reporting",
-      "target": "c6992660"
-    },
-    {
-      "source": "9f266f06",
-      "target": "3fb71518"
-    },
-    {
-      "source": "40886786",
-      "target": "c6992660"
-    },
-    {
-      "source": "3fb71518",
-      "target": "8838ca1f"
-    },
-    {
-      "source": "1e3cc50a",
-      "target": "reporting"
     },
     {
       "source": "be6b7919",
@@ -325,6 +277,54 @@
     },
     {
       "source": "reporting",
+      "target": "8838ca1f"
+    },
+    {
+      "source": "40886786",
+      "target": "c6992660"
+    },
+    {
+      "source": "reporting",
+      "target": "d0e9b00f"
+    },
+    {
+      "source": "9f266f06",
+      "target": "44ef9b48"
+    },
+    {
+      "source": "1e3cc50a",
+      "target": "reporting"
+    },
+    {
+      "source": "9f266f06",
+      "target": "be6b7919"
+    },
+    {
+      "source": "9f266f06",
+      "target": "3fb71518"
+    },
+    {
+      "source": "4adb5c8b",
+      "target": "eb7d6d28"
+    },
+    {
+      "source": "reporting",
+      "target": "3b199c6b"
+    },
+    {
+      "source": "reporting",
+      "target": "eb7d6d28"
+    },
+    {
+      "source": "reporting",
+      "target": "c6992660"
+    },
+    {
+      "source": "44ef9b48",
+      "target": "c0be8342"
+    },
+    {
+      "source": "3fb71518",
       "target": "8838ca1f"
     }
   ],
@@ -388,19 +388,19 @@
       "outputs": [],
       "children": [
         {
+          "id": "1e3cc50a",
+          "type": "data"
+        },
+        {
           "id": "reporting",
           "type": "modularPipeline"
         },
         {
-          "id": "3b199c6b",
+          "id": "eb7d6d28",
           "type": "data"
         },
         {
-          "id": "8838ca1f",
-          "type": "data"
-        },
-        {
-          "id": "9f266f06",
+          "id": "d0e9b00f",
           "type": "data"
         },
         {
@@ -412,15 +412,15 @@
           "type": "data"
         },
         {
-          "id": "eb7d6d28",
+          "id": "8838ca1f",
           "type": "data"
         },
         {
-          "id": "d0e9b00f",
+          "id": "3b199c6b",
           "type": "data"
         },
         {
-          "id": "1e3cc50a",
+          "id": "9f266f06",
           "type": "data"
         }
       ]
@@ -433,24 +433,16 @@
         "1e3cc50a"
       ],
       "outputs": [
-        "c0be8342",
-        "8838ca1f",
-        "eb7d6d28",
+        "c6992660",
         "d0e9b00f",
+        "eb7d6d28",
+        "c0be8342",
         "3b199c6b",
-        "c6992660"
+        "8838ca1f"
       ],
       "children": [
         {
-          "id": "4adb5c8b",
-          "type": "task"
-        },
-        {
           "id": "c7646ea1",
-          "type": "task"
-        },
-        {
-          "id": "44ef9b48",
           "type": "task"
         },
         {
@@ -462,7 +454,15 @@
           "type": "task"
         },
         {
+          "id": "4adb5c8b",
+          "type": "task"
+        },
+        {
           "id": "3fb71518",
+          "type": "task"
+        },
+        {
+          "id": "44ef9b48",
           "type": "task"
         }
       ]
